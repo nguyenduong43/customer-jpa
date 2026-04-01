@@ -10,7 +10,10 @@
             <i class="fas fa-plus"></i> Add new customer
         </a>
     </p>
-
+     <form th:action="@{/customers/search}" method="post">
+         <input type="text" name="name">
+         <input type="submit" value="search">
+     </form>
     <div class="notify">
         <div th:if="${success}">
             <span class="alert alert-success" th:text="${success}"></span>

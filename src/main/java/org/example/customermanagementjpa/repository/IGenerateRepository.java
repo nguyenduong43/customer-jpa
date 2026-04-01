@@ -1,5 +1,7 @@
 package org.example.customermanagementjpa.repository;
 
+import org.example.customermanagementjpa.model.Customer;
+
 import java.util.List;
 
 public interface IGenerateRepository<T> {
@@ -10,4 +12,5 @@ public interface IGenerateRepository<T> {
     void save(T t);
 
     void remove(Long id);
+    List<T> search(String name);
 }

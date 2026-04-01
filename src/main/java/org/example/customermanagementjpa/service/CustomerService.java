@@ -33,4 +33,10 @@ public class CustomerService implements ICustomerService {
         customerRepository.remove(id);
 
     }
+
+    @Override
+    public List<Customer> search(String name) {
+        return customerRepository.search(name);
+    }
+
 }

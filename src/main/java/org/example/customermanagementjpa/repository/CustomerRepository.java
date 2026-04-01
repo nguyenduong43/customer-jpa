@@ -48,4 +48,15 @@ public class CustomerRepository implements ICustomerRepository {
            entityManager.remove(customer);
        }
     }
+
+    @Override
+    public List<Customer> search(String name) {
+        String sql="CALL search(:name)";
+        Query query=entityManager.createNativeQuery(sql,Customer.class);
+        query.setParameter("name",name);
+        List<Customer> customers=query.getResultList();
+        return customers;
+    }
+
+
 }
